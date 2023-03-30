@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="TableColmn">
+    <file>employees.png</file>
+    <file>sticky-note.png</file>
+  </qresource>
+</RCC>
