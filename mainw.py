@@ -38,7 +38,6 @@ class Ui_MainWindow(object):
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
         self.menubar.addAction(self.menuopen.menuAction())
         self.menuopen.addAction(self.actiontest)
 
@@ -52,4 +51,5 @@ class Ui_MainWindow(object):
         self.actiontest.setText(QCoreApplication.translate("MainWindow", u"test", None))
         self.menuopen.setTitle(QCoreApplication.translate("MainWindow", u"open", None))
     # retranslateUi
+    
 

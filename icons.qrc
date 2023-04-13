@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>icons/multiply.png</file>
+    <file>icons/correct.png</file>
+  </qresource>
+</RCC>

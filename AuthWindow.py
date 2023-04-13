@@ -8,10 +8,11 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
+from PySide6.QtWidgets import *
 
+import icons_rc
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -86,18 +87,16 @@ class Ui_Form(object):
 
         self.pb_ok = QPushButton(Form)
         self.pb_ok.setObjectName(u"pb_ok")
-        icon = QIcon()
-        icon.addFile(u"icons/correct.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pb_ok.setIcon(icon)
+        icon_OK = QIcon(":/newPrefix/icons/correct.png")
+        self.pb_ok.setIcon(icon_OK)
         self.pb_ok.setIconSize(QSize(10, 10))
 
         self.gridLayout.addWidget(self.pb_ok, 2, 0, 1, 1)
 
         self.pb_cancel = QPushButton(Form)
         self.pb_cancel.setObjectName(u"pb_cancel")
-        icon1 = QIcon()
-        icon1.addFile(u"icons/multiply.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pb_cancel.setIcon(icon1)
+        icon_Cancel = QIcon(":/newPrefix/icons/multiply.png")
+        self.pb_cancel.setIcon(icon_Cancel)
         self.pb_cancel.setIconSize(QSize(10, 10))
 
         self.gridLayout.addWidget(self.pb_cancel, 2, 1, 1, 1)
@@ -112,7 +111,7 @@ class Ui_Form(object):
     # setupUi
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        Form.setWindowTitle(QCoreApplication.translate("Form", u"Auth window", None))
         self.groupBox.setTitle(QCoreApplication.translate("Form", u"Authorization", None))
         self.le_login.setText(QCoreApplication.translate("Form", u"Login", None))
         self.le_password.setText(QCoreApplication.translate("Form", u"Password", None))

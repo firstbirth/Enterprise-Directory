@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QCheckBox, QFo
     QPushButton, QSizePolicy, QSpacerItem, QStatusBar,
     QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 import icons_rc
-import tableIcons_rc
+import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):

@@ -18,37 +18,53 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#Form{
-	background-color:#202020;
+	background-color:#0d1b2a
 }
 
 .QLabel{
-	color:wheat;
+	color:#e0e1dd;
 	font-weight:bold;
 }
 
 .QGroupBox{
-	color:wheat;
+	color:#e0e1dd;
 	font-weight:bold;
 }
 
 .QPushButton{
-	background-color:green;
+	background-color:#293241;
 	color:white;
 }
 
 .QPushButton:hover{
-	background-color:#006c00;
+	background-color:#1b263b;
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="0">
+    <widget class="QPushButton" name="pb_ok">
+     <property name="text">
+      <string>Войти</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../icons.qrc">
+       <normaloff>:/newPrefix/icons/correct.png</normaloff>:/newPrefix/icons/correct.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>10</width>
+       <height>10</height>
+      </size>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="0" colspan="2">
     <widget class="QGroupBox" name="groupBox">
      <property name="styleSheet">
-      <string notr="true">
-</string>
+      <string notr="true"/>
      </property>
      <property name="title">
-      <string>Authorization</string>
+      <string>Авторизация</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -57,7 +73,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="le_login">
         <property name="text">
-         <string>Login</string>
+         <string>Логин:</string>
         </property>
        </widget>
       </item>
@@ -67,7 +83,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="le_password">
         <property name="text">
-         <string>Password</string>
+         <string>Пароль:</string>
         </property>
        </widget>
       </item>
@@ -79,6 +95,23 @@
        </widget>
       </item>
      </layout>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="pb_cancel">
+     <property name="text">
+      <string>Отмена</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../icons.qrc">
+       <normaloff>:/newPrefix/icons/multiply.png</normaloff>:/newPrefix/icons/multiply.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>10</width>
+       <height>10</height>
+      </size>
+     </property>
     </widget>
    </item>
    <item row="3" column="0" colspan="2">
@@ -101,40 +134,6 @@
      </property>
     </spacer>
    </item>
-   <item row="2" column="0">
-    <widget class="QPushButton" name="pb_ok">
-     <property name="text">
-      <string>Login</string>
-     </property>
-     <property name="icon">
-      <iconset resource="icons.qrc">
-       <normaloff>:/Buttons/correct.png</normaloff>:/Buttons/correct.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>10</width>
-       <height>10</height>
-      </size>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QPushButton" name="pb_cancel">
-     <property name="text">
-      <string>Cancel</string>
-     </property>
-     <property name="icon">
-      <iconset resource="icons.qrc">
-       <normaloff>:/Buttons/multiply.png</normaloff>:/Buttons/multiply.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>10</width>
-       <height>10</height>
-      </size>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
  <tabstops>
@@ -144,7 +143,7 @@
   <tabstop>pb_cancel</tabstop>
  </tabstops>
  <resources>
-  <include location="icons.qrc"/>
+  <include location="../icons.qrc"/>
  </resources>
  <connections/>
 </ui>
