@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>Authorization</class>
+ <widget class="QWidget" name="Authorization">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,10 +14,14 @@
    <cursorShape>ArrowCursor</cursorShape>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Авторизация в системе</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icons.qrc">
+    <normaloff>:/newPrefix/icons/organization.png</normaloff>:/newPrefix/icons/organization.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">#Form{
+   <string notr="true">#Authorization{
 	background-color:#0d1b2a
 }
 

@@ -1,52 +1,68 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'aumGhCmZ.ui'
+## Form generated from reading UI file 'AuthWindowUUOhsL.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.4.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import *
-from PySide6.QtGui import *
-from PySide6.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QFormLayout, QGridLayout, QGroupBox,
+    QLabel, QLineEdit, QPushButton, QSizePolicy,
+    QSpacerItem, QWidget)
 import icons_rc
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        if not Form.objectName():
-            Form.setObjectName(u"Form")
-        Form.resize(405, 189)
-        Form.setWindowFlags(Qt.WindowType.WindowCloseButtonHint)
-        Form.setCursor(QCursor(Qt.ArrowCursor))
-        Form.setFixedSize(400, 180)
-        Form.setStyleSheet(u"#Form{\n"
-"	background-color:#202020;\n"
+class Ui_Authorization(object):
+    def setupUi(self, Authorization):
+        if not Authorization.objectName():
+            Authorization.setObjectName(u"Authorization")
+        Authorization.resize(405, 189)
+        Authorization.setCursor(QCursor(Qt.ArrowCursor))
+        icon = QIcon()
+        icon.addFile(u":/newPrefix/icons/organization.png", QSize(), QIcon.Normal, QIcon.Off)
+        Authorization.setWindowIcon(icon)
+        Authorization.setStyleSheet(u"#Authorization{\n"
+"	background-color:#0d1b2a\n"
 "}\n"
 "\n"
 ".QLabel{\n"
-"	color:wheat;\n"
+"	color:#e0e1dd;\n"
 "	font-weight:bold;\n"
 "}\n"
 "\n"
 ".QGroupBox{\n"
-"	color:wheat;\n"
+"	color:#e0e1dd;\n"
 "	font-weight:bold;\n"
 "}\n"
 "\n"
 ".QPushButton{\n"
-"	background-color:green;\n"
+"	background-color:#293241;\n"
 "	color:white;\n"
 "}\n"
 "\n"
 ".QPushButton:hover{\n"
-"	background-color:#006c00;\n"
+"	background-color:#1b263b;\n"
 "}")
-        self.gridLayout = QGridLayout(Form)
+        self.gridLayout = QGridLayout(Authorization)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.groupBox = QGroupBox(Form)
+        self.pb_ok = QPushButton(Authorization)
+        self.pb_ok.setObjectName(u"pb_ok")
+        icon1 = QIcon()
+        icon1.addFile(u":/newPrefix/icons/correct.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pb_ok.setIcon(icon1)
+        self.pb_ok.setIconSize(QSize(10, 10))
+
+        self.gridLayout.addWidget(self.pb_ok, 2, 0, 1, 1)
+
+        self.groupBox = QGroupBox(Authorization)
         self.groupBox.setObjectName(u"groupBox")
         self.groupBox.setStyleSheet(u"")
         self.groupBox.setAlignment(Qt.AlignCenter)
@@ -76,7 +92,16 @@ class Ui_Form(object):
 
         self.gridLayout.addWidget(self.groupBox, 0, 0, 1, 2)
 
-        self.lb_message = QLabel(Form)
+        self.pb_cancel = QPushButton(Authorization)
+        self.pb_cancel.setObjectName(u"pb_cancel")
+        icon2 = QIcon()
+        icon2.addFile(u":/newPrefix/icons/multiply.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pb_cancel.setIcon(icon2)
+        self.pb_cancel.setIconSize(QSize(10, 10))
+
+        self.gridLayout.addWidget(self.pb_cancel, 2, 1, 1, 1)
+
+        self.lb_message = QLabel(Authorization)
         self.lb_message.setObjectName(u"lb_message")
 
         self.gridLayout.addWidget(self.lb_message, 3, 0, 1, 2)
@@ -85,38 +110,22 @@ class Ui_Form(object):
 
         self.gridLayout.addItem(self.verticalSpacer, 1, 0, 1, 2)
 
-        self.pb_ok = QPushButton(Form)
-        self.pb_ok.setObjectName(u"pb_ok")
-        icon_OK = QIcon(":/newPrefix/icons/correct.png")
-        self.pb_ok.setIcon(icon_OK)
-        self.pb_ok.setIconSize(QSize(10, 10))
-
-        self.gridLayout.addWidget(self.pb_ok, 2, 0, 1, 1)
-
-        self.pb_cancel = QPushButton(Form)
-        self.pb_cancel.setObjectName(u"pb_cancel")
-        icon_Cancel = QIcon(":/newPrefix/icons/multiply.png")
-        self.pb_cancel.setIcon(icon_Cancel)
-        self.pb_cancel.setIconSize(QSize(10, 10))
-
-        self.gridLayout.addWidget(self.pb_cancel, 2, 1, 1, 1)
-
         QWidget.setTabOrder(self.lineEdit, self.lineEdit_2)
         QWidget.setTabOrder(self.lineEdit_2, self.pb_ok)
         QWidget.setTabOrder(self.pb_ok, self.pb_cancel)
 
-        self.retranslateUi(Form)
+        self.retranslateUi(Authorization)
 
-        QMetaObject.connectSlotsByName(Form)
+        QMetaObject.connectSlotsByName(Authorization)
     # setupUi
 
-    def retranslateUi(self, Form):
-        Form.setWindowTitle(QCoreApplication.translate("Form", u"Auth window", None))
-        self.groupBox.setTitle(QCoreApplication.translate("Form", u"Authorization", None))
-        self.le_login.setText(QCoreApplication.translate("Form", u"Login", None))
-        self.le_password.setText(QCoreApplication.translate("Form", u"Password", None))
-        self.lb_message.setText(QCoreApplication.translate("Form", u"message", None))
-        self.pb_ok.setText(QCoreApplication.translate("Form", u"Login", None))
-        self.pb_cancel.setText(QCoreApplication.translate("Form", u"Cancel", None))
+    def retranslateUi(self, Authorization):
+        Authorization.setWindowTitle(QCoreApplication.translate("Authorization", u"\u0410\u0432\u0442\u043e\u0440\u0438\u0437\u0430\u0446\u0438\u044f \u0432 \u0441\u0438\u0441\u0442\u0435\u043c\u0435", None))
+        self.pb_ok.setText(QCoreApplication.translate("Authorization", u"\u0412\u043e\u0439\u0442\u0438", None))
+        self.groupBox.setTitle(QCoreApplication.translate("Authorization", u"\u0410\u0432\u0442\u043e\u0440\u0438\u0437\u0430\u0446\u0438\u044f", None))
+        self.le_login.setText(QCoreApplication.translate("Authorization", u"\u041b\u043e\u0433\u0438\u043d:", None))
+        self.le_password.setText(QCoreApplication.translate("Authorization", u"\u041f\u0430\u0440\u043e\u043b\u044c:", None))
+        self.pb_cancel.setText(QCoreApplication.translate("Authorization", u"\u041e\u0442\u043c\u0435\u043d\u0430", None))
+        self.lb_message.setText(QCoreApplication.translate("Authorization", u"", None))
     # retranslateUi
 
