@@ -1,5 +1,15 @@
 <RCC>
   <qresource prefix="newPrefix">
+    <file>icons/cloud-storage.png</file>
+    <file>icons/chief-executive-officer.png</file>
+    <file>icons/notebook-of-contacts.png</file>
+    <file>icons/location.png</file>
+    <file>icons/repair-tool.png</file>
+    <file>icons/industry.png</file>
+    <file>icons/remove-user.png</file>
+    <file>icons/plus.png</file>
+    <file>icons/user-account.png</file>
+    <file>icons/file.png</file>
     <file>icons/organization.png</file>
     <file>icons/multiply.png</file>
     <file>icons/correct.png</file>

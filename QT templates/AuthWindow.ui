@@ -31,13 +31,13 @@
 }
 
 .QGroupBox{
-	color:#e0e1dd;
+	color:#E0E1DD;
 	font-weight:bold;
 }
 
 .QPushButton{
 	background-color:#293241;
-	color:white;
+	color:#E0E1DD;
 }
 
 .QPushButton:hover{

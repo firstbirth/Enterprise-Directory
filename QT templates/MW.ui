@@ -6,20 +6,45 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>776</width>
-    <height>557</height>
+    <width>900</width>
+    <height>738</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>847</width>
+    <height>628</height>
+   </size>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Справочник предприятия</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../icons.qrc">
+    <normaloff>:/newPrefix/icons/organization.png</normaloff>:/newPrefix/icons/organization.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">.QMainWindow #centralwidget{
-background-color:#202020;
+   <string notr="true"> #centralwidget{
+background-color:#0D1B2A;
 }
 
+#act_ChangeUser{
+	background-color:blue;
+	color:white;
+}
+
+.QPushButton{
+	background-color:#293241;
+	color:#E0E1DD;
+}
 #statusbar{
-background-color:#202020;
+background-color:#293241;
 }
 
 #menubar{
@@ -27,6 +52,11 @@ color:black;
 font-weight:bold;
 }
 
+#toolbar{
+	
+	background-color:black;
+border:none;	
+}
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -34,267 +64,7 @@ font-weight:bold;
     <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="1">
-     <widget class="QGroupBox" name="groupBox_2">
-      <property name="styleSheet">
-       <string notr="true">#groupBox_2{
-	color:wheat;
-}</string>
-      </property>
-      <property name="title">
-       <string>Поиск</string>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QPushButton" name="pushButton">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_2">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="1" column="0" colspan="4">
-     <widget class="QGroupBox" name="groupBox_3">
-      <property name="styleSheet">
-       <string notr="true">#groupBox_3{
-	color:wheat;
-}</string>
-      </property>
-      <property name="title">
-       <string>Результаты поиска</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="2" column="1">
-        <widget class="QPushButton" name="pushButton_5">
-         <property name="text">
-          <string>Сохранить</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QPushButton" name="pushButton_4">
-         <property name="text">
-          <string>Очистить</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label">
-         <property name="styleSheet">
-          <string notr="true">#label{
-	color:wheat;
-}</string>
-         </property>
-         <property name="text">
-          <string>Найдено результатов: </string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" colspan="3" alignment="Qt::AlignVCenter">
-        <widget class="QTableWidget" name="tableWidget">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>266</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>738</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="tabletTracking">
-          <bool>false</bool>
-         </property>
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <property name="lineWidth">
-          <number>2</number>
-         </property>
-         <property name="midLineWidth">
-          <number>2</number>
-         </property>
-         <property name="sizeAdjustPolicy">
-          <enum>QAbstractScrollArea::AdjustToContents</enum>
-         </property>
-         <property name="alternatingRowColors">
-          <bool>false</bool>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>10</width>
-           <height>10</height>
-          </size>
-         </property>
-         <property name="gridStyle">
-          <enum>Qt::SolidLine</enum>
-         </property>
-         <property name="sortingEnabled">
-          <bool>false</bool>
-         </property>
-         <property name="rowCount">
-          <number>1</number>
-         </property>
-         <property name="columnCount">
-          <number>3</number>
-         </property>
-         <attribute name="horizontalHeaderCascadingSectionResizes">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>120</number>
-         </attribute>
-         <row/>
-         <column>
-          <property name="text">
-           <string>Организация</string>
-          </property>
-          <property name="icon">
-           <iconset resource="icons/tableIcons.qrc">
-            <normaloff>:/TableColmn/sticky-note.png</normaloff>:/TableColmn/sticky-note.png</iconset>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Количество сотрудников</string>
-          </property>
-          <property name="icon">
-           <iconset resource="icons/tableIcons.qrc">
-            <normaloff>:/TableColmn/employees.png</normaloff>:/TableColmn/employees.png</iconset>
-          </property>
-         </column>
-         <column/>
-         <item row="0" column="0">
-          <property name="text">
-           <string>фыв</string>
-          </property>
-         </item>
-         <item row="0" column="1">
-          <property name="text">
-           <string>фыв</string>
-          </property>
-          <property name="font">
-           <font>
-            <stylestrategy>PreferDefault</stylestrategy>
-           </font>
-          </property>
-          <property name="icon">
-           <iconset theme="dialog-warning"/>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="0" column="2" colspan="2">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="0" column="0">
-     <widget class="QGroupBox" name="groupBox">
-      <property name="styleSheet">
-       <string notr="true">color:wheat;</string>
-      </property>
-      <property name="title">
-       <string>Фильтры</string>
-      </property>
-      <layout class="QFormLayout" name="formLayout">
-       <item row="0" column="0">
-        <widget class="QCheckBox" name="checkBox">
-         <property name="text">
-          <string>CheckBox</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QCheckBox" name="checkBox_2">
-         <property name="text">
-          <string>CheckBox</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QCheckBox" name="checkBox_3">
-         <property name="text">
-          <string>CheckBox</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QCheckBox" name="checkBox_4">
-         <property name="text">
-          <string>CheckBox</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QCheckBox" name="checkBox_5">
-         <property name="text">
-          <string>CheckBox</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QCheckBox" name="checkBox_6">
-         <property name="text">
-          <string>CheckBox</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="2" column="0">
+    <item row="1" column="0">
      <widget class="QFrame" name="frame">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -311,32 +81,223 @@ font-weight:bold;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>776</width>
+     <width>900</width>
      <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>Файл</string>
+    <property name="autoFillBackground">
+     <bool>true</bool>
     </property>
-    <addaction name="action"/>
+    <property name="title">
+     <string>Меню</string>
+    </property>
+    <addaction name="act_ChangeUser"/>
+    <addaction name="separator"/>
+    <addaction name="act_Exit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Поиск</string>
+    </property>
+    <addaction name="act_FindEnterprise"/>
+    <addaction name="act_InfoIndustry"/>
+    <addaction name="act_InfoServices"/>
+    <addaction name="act_InfoCity"/>
+    <addaction name="act_InfoContact"/>
+    <addaction name="act_InfoChief"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Администрирование</string>
+    </property>
+    <addaction name="act_AddUser"/>
+    <addaction name="act_DeleteUser"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>Резервная копия</string>
+    </property>
+    <addaction name="act_Backup"/>
    </widget>
    <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_5"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="action">
+  <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>25</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="act_FindEnterprise"/>
+   <addaction name="act_InfoIndustry"/>
+   <addaction name="act_InfoServices"/>
+   <addaction name="act_InfoCity"/>
+   <addaction name="act_InfoContact"/>
+   <addaction name="act_InfoChief"/>
+   <addaction name="separator"/>
+   <addaction name="act_AddUser"/>
+   <addaction name="act_DeleteUser"/>
+   <addaction name="separator"/>
+   <addaction name="act_Backup"/>
+  </widget>
+  <action name="act_Exit">
    <property name="icon">
-    <iconset resource="icons.qrc">
-     <normaloff>:/Buttons/multiply.png</normaloff>:/Buttons/multiply.png</iconset>
+    <iconset resource="../icons.qrc">
+     <normaloff>:/newPrefix/icons/multiply.png</normaloff>:/newPrefix/icons/multiply.png</iconset>
    </property>
    <property name="text">
     <string>Выход</string>
    </property>
   </action>
+  <action name="act_FindEnterprise">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/newPrefix/icons/file.png</normaloff>:/newPrefix/icons/file.png</iconset>
+   </property>
+   <property name="text">
+    <string>Информация о предприятии</string>
+   </property>
+  </action>
+  <action name="act_ChangeUser">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/newPrefix/icons/user-account.png</normaloff>:/newPrefix/icons/user-account.png</iconset>
+   </property>
+   <property name="text">
+    <string>Сменить пользователя</string>
+   </property>
+  </action>
+  <action name="act_AddUser">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/newPrefix/icons/plus.png</normaloff>:/newPrefix/icons/plus.png</iconset>
+   </property>
+   <property name="text">
+    <string>Добавить пользователя</string>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="act_DeleteUser">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/newPrefix/icons/remove-user.png</normaloff>:/newPrefix/icons/remove-user.png</iconset>
+   </property>
+   <property name="text">
+    <string>Удалить пользователя</string>
+   </property>
+  </action>
+  <action name="act_InfoIndustry">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/newPrefix/icons/industry.png</normaloff>:/newPrefix/icons/industry.png</iconset>
+   </property>
+   <property name="text">
+    <string>Информация о подразделениях</string>
+   </property>
+  </action>
+  <action name="act_InfoServices">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/newPrefix/icons/repair-tool.png</normaloff>:/newPrefix/icons/repair-tool.png</iconset>
+   </property>
+   <property name="text">
+    <string>Информация о услугах</string>
+   </property>
+  </action>
+  <action name="act_InfoCity">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/newPrefix/icons/location.png</normaloff>:/newPrefix/icons/location.png</iconset>
+   </property>
+   <property name="text">
+    <string>Информация о городах</string>
+   </property>
+  </action>
+  <action name="act_InfoContact">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/newPrefix/icons/notebook-of-contacts.png</normaloff>:/newPrefix/icons/notebook-of-contacts.png</iconset>
+   </property>
+   <property name="text">
+    <string>Информация о контактах</string>
+   </property>
+  </action>
+  <action name="act_InfoChief">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/newPrefix/icons/chief-executive-officer.png</normaloff>:/newPrefix/icons/chief-executive-officer.png</iconset>
+   </property>
+   <property name="text">
+    <string>Информация о руководителях</string>
+   </property>
+  </action>
+  <action name="act_Backup">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/newPrefix/icons/cloud-storage.png</normaloff>:/newPrefix/icons/cloud-storage.png</iconset>
+   </property>
+   <property name="text">
+    <string>Создать</string>
+   </property>
+  </action>
  </widget>
  <resources>
-  <include location="icons.qrc"/>
-  <include location="icons/tableIcons.qrc"/>
+  <include location="../icons.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'AuthWindowUUOhsL.ui'
+## Form generated from reading UI file 'AuthWindowSAYhDC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.2
 ##
@@ -39,13 +39,13 @@ class Ui_Authorization(object):
 "}\n"
 "\n"
 ".QGroupBox{\n"
-"	color:#e0e1dd;\n"
+"	color:#E0E1DD;\n"
 "	font-weight:bold;\n"
 "}\n"
 "\n"
 ".QPushButton{\n"
 "	background-color:#293241;\n"
-"	color:white;\n"
+"	color:#E0E1DD;\n"
 "}\n"
 "\n"
 ".QPushButton:hover{\n"
@@ -75,7 +75,7 @@ class Ui_Authorization(object):
 
         self.lineEdit = QLineEdit(self.groupBox)
         self.lineEdit.setObjectName(u"lineEdit")
-
+        self.lineEdit.setText("root")#это удалить
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.lineEdit)
 
         self.le_password = QLabel(self.groupBox)
@@ -85,6 +85,7 @@ class Ui_Authorization(object):
 
         self.lineEdit_2 = QLineEdit(self.groupBox)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lineEdit_2.setText("root")#это удалить
         self.lineEdit_2.setEchoMode(QLineEdit.Password)
 
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lineEdit_2)
@@ -126,6 +127,6 @@ class Ui_Authorization(object):
         self.le_login.setText(QCoreApplication.translate("Authorization", u"\u041b\u043e\u0433\u0438\u043d:", None))
         self.le_password.setText(QCoreApplication.translate("Authorization", u"\u041f\u0430\u0440\u043e\u043b\u044c:", None))
         self.pb_cancel.setText(QCoreApplication.translate("Authorization", u"\u041e\u0442\u043c\u0435\u043d\u0430", None))
-        self.lb_message.setText(QCoreApplication.translate("Authorization", u"", None))
+        self.lb_message.setText(QCoreApplication.translate("Authorization", u"message", None))
     # retranslateUi
 
