@@ -30,7 +30,8 @@ class InfoEnterprise(QtWidgets.QMainWindow, Ui_w_InfoEnterprise):
                 # print(f"{toCol} должен быть добавлен в {i} колонку")
                 i+=1
 
-            self.statusBar().showMessage(f"Найдено результатов: {infoFromDB.arraysize}")
+            self.statusBar().showMessage(f"Найдено результатов: {infoFromDB.rowcount}",3000)
+    
     def SendQueryAllEnterprises(self,dbInstance):
 
         cursor = dbInstance.cursor()

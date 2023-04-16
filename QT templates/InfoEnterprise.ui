@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1020</width>
-    <height>487</height>
+    <height>486</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -96,11 +96,35 @@ font-weight:bold;
          <property name="rowCount">
           <number>1</number>
          </property>
+         <attribute name="horizontalHeaderVisible">
+          <bool>true</bool>
+         </attribute>
          <attribute name="horizontalHeaderCascadingSectionResizes">
           <bool>false</bool>
          </attribute>
+         <attribute name="horizontalHeaderMinimumSectionSize">
+          <number>45</number>
+         </attribute>
          <attribute name="horizontalHeaderDefaultSectionSize">
           <number>100</number>
+         </attribute>
+         <attribute name="horizontalHeaderHighlightSections">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderCascadingSectionResizes">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderStretchLastSection">
+          <bool>false</bool>
          </attribute>
          <row>
           <property name="text">
@@ -111,90 +135,135 @@ font-weight:bold;
           <property name="text">
            <string>Enterprise_ID</string>
           </property>
+          <property name="foreground">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
+            </color>
+           </brush>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/newPrefix/icons/verified.png</normaloff>:/newPrefix/icons/verified.png</iconset>
+          </property>
          </column>
          <column>
           <property name="text">
            <string>Enterprise_Name</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/newPrefix/icons/signature.png</normaloff>:/newPrefix/icons/signature.png</iconset>
           </property>
          </column>
          <column>
           <property name="text">
            <string>Enterprise_City</string>
           </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/newPrefix/icons/location.png</normaloff>:/newPrefix/icons/location.png</iconset>
+          </property>
          </column>
          <column>
           <property name="text">
            <string>Industry_ID</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/newPrefix/icons/industry.png</normaloff>:/newPrefix/icons/industry.png</iconset>
           </property>
          </column>
          <column>
           <property name="text">
            <string>Address</string>
           </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/newPrefix/icons/house.png</normaloff>:/newPrefix/icons/house.png</iconset>
+          </property>
          </column>
          <column>
           <property name="text">
            <string>Employee_Count</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/newPrefix/icons/employees.png</normaloff>:/newPrefix/icons/employees.png</iconset>
           </property>
          </column>
          <column>
           <property name="text">
            <string>Contact_ID</string>
           </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/newPrefix/icons/notebook-of-contacts.png</normaloff>:/newPrefix/icons/notebook-of-contacts.png</iconset>
+          </property>
          </column>
          <column>
           <property name="text">
-           <string>Contact_Info_Manager</string>
+           <string>Manager</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/newPrefix/icons/chief-executive-officer.png</normaloff>:/newPrefix/icons/chief-executive-officer.png</iconset>
           </property>
          </column>
          <column>
           <property name="text">
            <string>Description</string>
           </property>
+          <property name="icon">
+           <iconset resource="../icons.qrc">
+            <normaloff>:/newPrefix/icons/product-description.png</normaloff>:/newPrefix/icons/product-description.png</iconset>
+          </property>
          </column>
          <item row="0" column="0">
           <property name="text">
-           <string>1</string>
+           <string/>
           </property>
          </item>
          <item row="0" column="1">
           <property name="text">
-           <string>MyCompany</string>
+           <string/>
           </property>
          </item>
          <item row="0" column="2">
           <property name="text">
-           <string>1</string>
+           <string/>
           </property>
          </item>
          <item row="0" column="3">
           <property name="text">
-           <string>1</string>
+           <string/>
           </property>
          </item>
          <item row="0" column="4">
           <property name="text">
-           <string>asdasdasd</string>
+           <string/>
           </property>
          </item>
          <item row="0" column="5">
           <property name="text">
-           <string>21</string>
+           <string/>
           </property>
          </item>
          <item row="0" column="6">
           <property name="text">
-           <string>1</string>
+           <string/>
           </property>
          </item>
          <item row="0" column="7">
           <property name="text">
-           <string>1</string>
+           <string/>
           </property>
          </item>
          <item row="0" column="8">
           <property name="text">
-           <string>text</string>
+           <string/>
           </property>
          </item>
         </widget>

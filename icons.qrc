@@ -1,5 +1,10 @@
 <RCC>
   <qresource prefix="newPrefix">
+    <file>icons/product-description.png</file>
+    <file>icons/employees.png</file>
+    <file>icons/house.png</file>
+    <file>icons/signature.png</file>
+    <file>icons/verified.png</file>
     <file>icons/cloud-storage.png</file>
     <file>icons/chief-executive-officer.png</file>
     <file>icons/notebook-of-contacts.png</file>

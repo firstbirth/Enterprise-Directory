@@ -127,6 +127,6 @@ class Ui_Authorization(object):
         self.le_login.setText(QCoreApplication.translate("Authorization", u"\u041b\u043e\u0433\u0438\u043d:", None))
         self.le_password.setText(QCoreApplication.translate("Authorization", u"\u041f\u0430\u0440\u043e\u043b\u044c:", None))
         self.pb_cancel.setText(QCoreApplication.translate("Authorization", u"\u041e\u0442\u043c\u0435\u043d\u0430", None))
-        self.lb_message.setText(QCoreApplication.translate("Authorization", u"message", None))
+        self.lb_message.setText(QCoreApplication.translate("Authorization", u"", None))
     # retranslateUi
 
