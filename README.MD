@@ -1,4 +1,4 @@
-### Enterprise-Dictionary (Справочник предприятия)
+### Enterprise-Directory (Справочник предприятия)
 ---
 ### Оглавление
 + <a href ="#proj_struct">Структура проекта</a>
