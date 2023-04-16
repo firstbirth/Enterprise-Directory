@@ -9,6 +9,8 @@
     + <a href ="#search_industryInfo">Поиск - информация о подразделениях</a>
     + <a href ="#search_serviceInfo">Поиск - информация о услугах</a>
     + <a href ="#search_CityInfo">Поиск - информация о городах</a>
+    + <a href ="#search_ContactInfo">Поиск - информация о контактах</a>
+    + <a href ="#search_ChiefInfo">Поиск - информация о руководителях</a>
 
 ---
 
