@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>w_InfoIndustry</class>
- <widget class="QMainWindow" name="w_InfoIndustry">
+ <class>w_InfoCity</class>
+ <widget class="QMainWindow" name="w_InfoCity">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>488</height>
+    <width>800</width>
+    <height>421</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,21 +18,21 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>500</width>
+    <width>800</width>
     <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>500</width>
+    <width>1020</width>
     <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
-   <string>Информация о подразделениях</string>
+   <string>Информация о городах</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../icons.qrc">
+   <iconset>
     <normaloff>:/newPrefix/icons/organization.png</normaloff>:/newPrefix/icons/organization.png</iconset>
   </property>
   <property name="styleSheet">
@@ -70,11 +70,11 @@ font-weight:bold;
     <item row="0" column="1">
      <widget class="QGroupBox" name="groupBox">
       <property name="title">
-       <string>Информация о подразделениях</string>
+       <string>Информация о городах</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QTableWidget" name="tw_ViewIndustry">
+        <widget class="QTableWidget" name="tw_ViewCities">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -96,29 +96,23 @@ font-weight:bold;
          <property name="rowCount">
           <number>0</number>
          </property>
-         <attribute name="horizontalHeaderVisible">
-          <bool>true</bool>
-         </attribute>
          <attribute name="horizontalHeaderCascadingSectionResizes">
           <bool>false</bool>
          </attribute>
          <attribute name="horizontalHeaderDefaultSectionSize">
           <number>100</number>
          </attribute>
-         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-          <bool>false</bool>
-         </attribute>
          <attribute name="horizontalHeaderStretchLastSection">
           <bool>true</bool>
          </attribute>
          <column>
           <property name="text">
-           <string>Industry_ID</string>
+           <string>CityCode_ID</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Industry_Name</string>
+           <string>City_Name</string>
           </property>
          </column>
         </widget>
@@ -188,7 +182,7 @@ font-weight:bold;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>500</width>
+     <width>800</width>
      <height>22</height>
     </rect>
    </property>
@@ -196,7 +190,7 @@ font-weight:bold;
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../icons.qrc"/>
+  <include location="../../../AppData/AppData/Desktop/qt/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

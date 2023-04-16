@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -60,18 +63,74 @@ border:none;
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="1" column="0">
      <widget class="QFrame" name="frame">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>512</width>
+           <height>512</height>
+          </size>
+         </property>
+         <property name="mouseTracking">
+          <bool>false</bool>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#label{
+	color:#415A77;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::PlainText</enum>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../icons.qrc">:/newPrefix/icons/myAsciiAr2t.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+         <property name="openExternalLinks">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
@@ -129,9 +188,16 @@ border:none;
     </property>
     <addaction name="act_Backup"/>
    </widget>
+   <widget class="QMenu" name="menuSQL">
+    <property name="title">
+     <string>SQL-редактор</string>
+    </property>
+    <addaction name="act_CreateSQL"/>
+   </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
    <addaction name="menu_3"/>
+   <addaction name="menuSQL"/>
    <addaction name="menu_5"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -187,6 +253,8 @@ border:none;
    <addaction name="separator"/>
    <addaction name="act_AddUser"/>
    <addaction name="act_DeleteUser"/>
+   <addaction name="separator"/>
+   <addaction name="act_CreateSQL"/>
    <addaction name="separator"/>
    <addaction name="act_Backup"/>
   </widget>
@@ -293,6 +361,15 @@ border:none;
    </property>
    <property name="text">
     <string>Создать</string>
+   </property>
+  </action>
+  <action name="act_CreateSQL">
+   <property name="icon">
+    <iconset resource="../icons.qrc">
+     <normaloff>:/newPrefix/icons/download.png</normaloff>:/newPrefix/icons/download.png</iconset>
+   </property>
+   <property name="text">
+    <string>Сформировать запрос</string>
    </property>
   </action>
  </widget>

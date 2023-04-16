@@ -10,28 +10,10 @@ class InfoIndustry(QtWidgets.QMainWindow, Ui_w_InfoIndustry):
             self.DBINST = DBINSTANCE
             self.tw_ViewIndustry
             self.btn_GetData.clicked.connect(self.GetEnterpriseInfo)
-            
    
     def GetEnterpriseInfo(self):
         infoFromDB = self.SendQueryAllEnterprises(self.DBINST)
-        # print(len(infoFromDB))
-        # for i in range(infoFromDB.rowcount):
-        #      columns.append(QTableWidgetItem())
-
-
-        
-        # for FirstColumb in infoFromDB:
-        #     i=0
-        #     print(FirstColumb)
-        #     for Sec in FirstColumb:
-        #         # print("{}".format(Sec))
-        #         toCol = str(Sec)
-        #         # print(FirstColumb[0])
-        #         columns[i].setText(toCol)
-        #         self.tw_ViewIndustry.setItem(0,i, columns[i])
-        #         # print(f"{toCol} должен быть добавлен в {i} колонку")
-        #         i+=1
-
+      
         self.statusBar().showMessage(f"Найдено результатов: {infoFromDB.rowcount}",3000)
     
     

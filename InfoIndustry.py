@@ -142,7 +142,7 @@ class Ui_w_InfoIndustry(object):
     # setupUi
 
     def retranslateUi(self, w_InfoIndustry):
-        w_InfoIndustry.setWindowTitle(QCoreApplication.translate("w_InfoIndustry", u"\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043e \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u0438", None))
+        w_InfoIndustry.setWindowTitle(QCoreApplication.translate("w_InfoIndustry", u"\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043e \u043f\u043e\u0434\u0440\u0430\u0437\u0434\u0435\u043b\u0435\u043d\u0438\u044f\u0445", None))
         self.groupBox.setTitle(QCoreApplication.translate("w_InfoIndustry", u"\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043e \u043f\u043e\u0434\u0440\u0430\u0437\u0434\u0435\u043b\u0435\u043d\u0438\u044f\u0445", None))
         ___qtablewidgetitem = self.tw_ViewIndustry.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("w_InfoIndustry", u"Industry_ID", None));

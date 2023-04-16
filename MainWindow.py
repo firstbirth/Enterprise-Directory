@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MWbOwXpp.ui'
+## Form generated from reading UI file 'MWlvXslC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.2
 ##
@@ -16,15 +16,16 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QMainWindow,
-    QMenu, QMenuBar, QSizePolicy, QStatusBar,
-    QToolBar, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
+    QLabel, QMainWindow, QMenu, QMenuBar,
+    QSizePolicy, QStatusBar, QToolBar, QWidget)
 import icons_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
+        MainWindow.setEnabled(True)
         MainWindow.resize(900, 738)
         MainWindow.setMinimumSize(QSize(847, 628))
         MainWindow.setAcceptDrops(True)
@@ -47,6 +48,7 @@ class Ui_MainWindow(object):
 "}\n"
 "#statusbar{\n"
 "background-color:#293241;\n"
+"color:#E0E1DD;\n"
 "}\n"
 "\n"
 "#menubar{\n"
@@ -117,15 +119,42 @@ class Ui_MainWindow(object):
         icon11 = QIcon()
         icon11.addFile(u":/newPrefix/icons/cloud-storage.png", QSize(), QIcon.Normal, QIcon.Off)
         self.act_Backup.setIcon(icon11)
+        self.act_CreateSQL = QAction(MainWindow)
+        self.act_CreateSQL.setObjectName(u"act_CreateSQL")
+        icon12 = QIcon()
+        icon12.addFile(u":/newPrefix/icons/download.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.act_CreateSQL.setIcon(icon12)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.centralwidget.setEnabled(True)
         self.centralwidget.setStyleSheet(u"")
         self.gridLayout = QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.frame = QFrame(self.centralwidget)
         self.frame.setObjectName(u"frame")
+        self.frame.setEnabled(True)
+        self.frame.setMouseTracking(False)
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout = QHBoxLayout(self.frame)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.label = QLabel(self.frame)
+        self.label.setObjectName(u"label")
+        self.label.setEnabled(True)
+        self.label.setMaximumSize(QSize(512, 512))
+        self.label.setMouseTracking(False)
+        self.label.setAutoFillBackground(False)
+        self.label.setStyleSheet(u"#label{\n"
+"	color:#415A77;\n"
+"}")
+        self.label.setTextFormat(Qt.MarkdownText)
+        self.label.setPixmap(QPixmap(u":/newPrefix/icons/myAsciiAr2t.png"))
+        self.label.setScaledContents(False)
+        self.label.setWordWrap(True)
+        self.label.setOpenExternalLinks(False)
+
+        self.horizontalLayout.addWidget(self.label)
+
 
         self.gridLayout.addWidget(self.frame, 1, 0, 1, 1)
 
@@ -145,6 +174,8 @@ class Ui_MainWindow(object):
         self.menu_3.setAutoFillBackground(False)
         self.menu_5 = QMenu(self.menubar)
         self.menu_5.setObjectName(u"menu_5")
+        self.menuSQL = QMenu(self.menubar)
+        self.menuSQL.setObjectName(u"menuSQL")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -167,6 +198,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menu.menuAction())
         self.menubar.addAction(self.menu_2.menuAction())
         self.menubar.addAction(self.menu_3.menuAction())
+        self.menubar.addAction(self.menuSQL.menuAction())
         self.menubar.addAction(self.menu_5.menuAction())
         self.menu.addAction(self.act_ChangeUser)
         self.menu.addSeparator()
@@ -180,6 +212,7 @@ class Ui_MainWindow(object):
         self.menu_3.addAction(self.act_AddUser)
         self.menu_3.addAction(self.act_DeleteUser)
         self.menu_5.addAction(self.act_Backup)
+        self.menuSQL.addAction(self.act_CreateSQL)
         self.toolBar.addAction(self.act_FindEnterprise)
         self.toolBar.addAction(self.act_InfoIndustry)
         self.toolBar.addAction(self.act_InfoServices)
@@ -189,6 +222,8 @@ class Ui_MainWindow(object):
         self.toolBar.addSeparator()
         self.toolBar.addAction(self.act_AddUser)
         self.toolBar.addAction(self.act_DeleteUser)
+        self.toolBar.addSeparator()
+        self.toolBar.addAction(self.act_CreateSQL)
         self.toolBar.addSeparator()
         self.toolBar.addAction(self.act_Backup)
 
@@ -210,10 +245,16 @@ class Ui_MainWindow(object):
         self.act_InfoContact.setText(QCoreApplication.translate("MainWindow", u"\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043e \u043a\u043e\u043d\u0442\u0430\u043a\u0442\u0430\u0445", None))
         self.act_InfoChief.setText(QCoreApplication.translate("MainWindow", u"\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043e \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044f\u0445", None))
         self.act_Backup.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u0437\u0434\u0430\u0442\u044c", None))
+        self.act_CreateSQL.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0444\u043e\u0440\u043c\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0437\u0430\u043f\u0440\u043e\u0441", None))
+#if QT_CONFIG(tooltip)
+        self.frame.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><br/></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+        self.label.setText("")
         self.menu.setTitle(QCoreApplication.translate("MainWindow", u"\u041c\u0435\u043d\u044e", None))
         self.menu_2.setTitle(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u0438\u0441\u043a", None))
         self.menu_3.setTitle(QCoreApplication.translate("MainWindow", u"\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435", None))
         self.menu_5.setTitle(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0437\u0435\u0440\u0432\u043d\u0430\u044f \u043a\u043e\u043f\u0438\u044f", None))
+        self.menuSQL.setTitle(QCoreApplication.translate("MainWindow", u"SQL-\u0440\u0435\u0434\u0430\u043a\u0442\u043e\u0440", None))
         self.toolBar.setWindowTitle(QCoreApplication.translate("MainWindow", u"toolBar", None))
     # retranslateUi
 

@@ -1,7 +1,9 @@
 <RCC>
   <qresource prefix="newPrefix">
     <file>icons/product-description.png</file>
+    <file>icons/download.png</file>
     <file>icons/employees.png</file>
+    <file>icons/myAsciiAr2t.png</file>
     <file>icons/house.png</file>
     <file>icons/signature.png</file>
     <file>icons/verified.png</file>
