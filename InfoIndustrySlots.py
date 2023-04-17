@@ -1,7 +1,8 @@
 from InfoIndustry import Ui_w_InfoIndustry
 from PySide6 import QtWidgets
-from PySide6.QtWidgets import QTableWidgetItem
+from PySide6.QtWidgets import QTableWidgetItem, QFileDialog
 import mysql.connector
+import csv
 
 class InfoIndustry(QtWidgets.QMainWindow, Ui_w_InfoIndustry):
     def __init__(self, DBINSTANCE):
@@ -10,10 +11,11 @@ class InfoIndustry(QtWidgets.QMainWindow, Ui_w_InfoIndustry):
             self.DBINST = DBINSTANCE
             self.tw_ViewIndustry
             self.btn_GetData.clicked.connect(self.GetEnterpriseInfo)
-   
+            self.btn_SaveData.clicked.connect(self.SaveToFile)
+    
+    
     def GetEnterpriseInfo(self):
         infoFromDB = self.SendQueryAllEnterprises(self.DBINST)
-      
         self.statusBar().showMessage(f"Найдено результатов: {infoFromDB.rowcount}",3000)
     
     
@@ -43,41 +45,24 @@ class InfoIndustry(QtWidgets.QMainWindow, Ui_w_InfoIndustry):
             col+=1
 
         print("Успешно выведено")
-             
-        # print("curs2", curs2)
-        # print("cursor", cursor)
-        # for pke in cursor: 
-        #     print(cursor.rowcount)
-        
-        # print(len(infoFromDB))
-        # for i in range(cursor.rowcount*2+1):
-        #      columns.append(QTableWidgetItem())
-    
-        # self.tw_ViewIndustry.setRowCount(cursor.rowcount)
-        
-        #установка значений каждому объекту QTableWidget
-        
-        # row = 0
-        # col = 0
-
-        # while row<=7:
-        #     counter=0
-        #     if col ==2:
-        #         col = 0
-        #         row +=1
-        #     self.tw_ViewIndustry.setItem()
-        #     self.tw_ViewIndustry.setItem(row,col,columns[counter])
-        #     col+=1
-
-
-
-        # row = 0
-        # col = 0
-        # for FirstColumb1 in cursor: #(4, 'Нефтегазовая промышленность')
-        #     for item in FirstColumb1: #4
-        #          columns[]
-        #          self.tw_ViewIndustry.setItem(0,1,__qtablevidgetitem)
-        #     print("{}".format(FirstColumb1))
-        
-        # self.tw_ViewIndustry.
         return cursor
+    
+    def SaveToFile(self):
+        filename, _ = QFileDialog.getSaveFileName(self, "Save File", "", "CSV (*.csv)")
+        if filename:
+            self.CollectFromQTW(filename=filename)
+        self.statusBar().showMessage(f"Данные успешно сохранены в файл: {filename}",3000)
+
+
+    def CollectFromQTW(self,filename):
+        with open(filename, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            for row in range(self.tw_ViewIndustry.rowCount()):
+                row_data = []
+                for column in range(self.tw_ViewIndustry.columnCount()):
+                    item = self.tw_ViewIndustry.item(row, column)
+                    if item is not None:
+                        row_data.append(item.text())
+                    else:
+                        row_data.append('')
+                writer.writerow(row_data)

@@ -1,6 +1,5 @@
 import sys
 from PySide6.QtWidgets import QApplication
-
 from AuthWindowSlots import AuthWindow
 from MainWindowSlots import Ui_MainWindow
 

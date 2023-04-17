@@ -1,15 +1,17 @@
 from InfoContact import Ui_w_InfoContact
 from PySide6 import QtWidgets
-from PySide6.QtWidgets import QTableWidgetItem
+from PySide6.QtWidgets import QTableWidgetItem, QFileDialog
 import mysql.connector
+import csv
 
 class InfoContacts(QtWidgets.QMainWindow, Ui_w_InfoContact):
     def __init__(self, DBINSTANCE):
-            super().__init__()
-            self.setupUi(self)
-            self.DBINST = DBINSTANCE
-            self.btn_GetData.clicked.connect(self.GetContactInfo)
-    
+        super().__init__()
+        self.setupUi(self)
+        self.DBINST = DBINSTANCE
+        self.btn_GetData.clicked.connect(self.GetContactInfo)
+        self.btn_SaveData.clicked.connect(self.SaveToFile)
+
     
     def GetContactInfo(self):
         infoFromDB = self.SendQueryAllEnterprises(self.DBINST)
@@ -45,3 +47,23 @@ class InfoContacts(QtWidgets.QMainWindow, Ui_w_InfoContact):
 
         print("Успешно выведено")
         return cursor
+    
+    def SaveToFile(self):
+        filename, _ = QFileDialog.getSaveFileName(self, "Save File", "", "CSV (*.csv)")
+        if filename:
+            self.CollectFromQTW(filename=filename)
+        self.statusBar().showMessage(f"Данные успешно сохранены в файл: {filename}",3000)
+
+
+    def CollectFromQTW(self,filename):
+        with open(filename, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            for row in range(self.tw_ViewContacts.rowCount()):
+                row_data = []
+                for column in range(self.tw_ViewContacts.columnCount()):
+                    item = self.tw_ViewContacts.item(row, column)
+                    if item is not None:
+                        row_data.append(item.text())
+                    else:
+                        row_data.append('')
+                writer.writerow(row_data)

@@ -20,7 +20,7 @@ class AuthWindow(QtWidgets.QDialog, Ui_Authorization):
                 host="localhost",
                 user=self.lineEdit.text(),
                 passwd=self.lineEdit_2.text())
-
+            
             print("Sucessfully connected to DB username: {0} \nConnection ID: {1}".format(
                 dbConnection._user, dbConnection.connection_id))
             self.lb_message.setText("Соединение с БД установлено!")

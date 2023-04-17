@@ -8,6 +8,7 @@ import InfoServiceSlots
 import InfoCitySlots
 import InfoContactSlots
 import InfoChiefSlots
+import CreateUserSlots
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, DBINSTANCE):
@@ -16,12 +17,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.act_Exit.triggered.connect(self.close)
         self.act_ChangeUser.triggered.connect(self.ChangeUser)
         self.DBOBJ = DBINSTANCE
+        if self.DBOBJ.user !="root":
+            self.act_AddUser.setEnabled(False)
+            self.act_DeleteUser.setEnabled(False)
+            self.act_CreateSQL.setEnabled(False)
+            self.act_Backup.setEnabled(False)
+            
         self.act_FindEnterprise.triggered.connect(self.OpenView)
         self.act_InfoIndustry.triggered.connect(self.OpenIndustry)
         self.act_InfoServices.triggered.connect(self.OpenServices)
         self.act_InfoCity.triggered.connect(self.OpenCity)
         self.act_InfoContact.triggered.connect(self.OpenContacts)
         self.act_InfoChief.triggered.connect(self.OpenChieves)
+        self.act_AddUser.triggered.connect(self.OpenAddUser)
         self.statusBar().showMessage(f"Успешная авторизация: {self.DBOBJ.user}",3000)
 
     def ChangeUser(self):
@@ -61,6 +69,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def OpenChieves(self):
         window = InfoChiefSlots.InfoChief(DBINSTANCE=self.DBOBJ)
+        window.show()
+        window.exec()
+
+    def OpenAddUser(self):
+        window = CreateUserSlots.CreateUser(DBINSTANCE=self.DBOBJ)
         window.show()
         window.exec()
     # def SendQuery(self):

@@ -1,7 +1,9 @@
 from InfoEnterprise import Ui_w_InfoEnterprise
 from PySide6 import QtWidgets
-from PySide6.QtWidgets import QTableWidgetItem
+from PySide6.QtWidgets import QTableWidgetItem, QFileDialog
 import mysql.connector
+import csv
+
 
 class InfoEnterprise(QtWidgets.QMainWindow, Ui_w_InfoEnterprise):
     def __init__(self, DBINSTANCE):
@@ -10,7 +12,7 @@ class InfoEnterprise(QtWidgets.QMainWindow, Ui_w_InfoEnterprise):
             self.DBINST = DBINSTANCE
             self.tw_ViewEnterprise.rowCount
             self.btn_GetData.clicked.connect(self.GetEnterpriseInfo)
-            
+            self.btn_SaveData.clicked.connect(self.SaveToFile)
    
 
     def GetEnterpriseInfo(self):
@@ -40,4 +42,24 @@ class InfoEnterprise(QtWidgets.QMainWindow, Ui_w_InfoEnterprise):
         dbInstance.commit
         return cursor
 
+
+    def SaveToFile(self):
+        filename, _ = QFileDialog.getSaveFileName(self, "Save File", "", "CSV (*.csv)")
+        if filename:
+            self.CollectFromQTW(filename=filename)
+        self.statusBar().showMessage(f"Данные успешно сохранены в файл: {filename}",3000)
+
+
+    def CollectFromQTW(self,filename):
+        with open(filename, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            for row in range(self.tw_ViewEnterprise.rowCount()):
+                row_data = []
+                for column in range(self.tw_ViewEnterprise.columnCount()):
+                    item = self.tw_ViewEnterprise.item(row, column)
+                    if item is not None:
+                        row_data.append(item.text())
+                    else:
+                        row_data.append('')
+                writer.writerow(row_data)
     
