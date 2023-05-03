@@ -1,7 +1,8 @@
 from MainWindow import Ui_MainWindow
-from PySide6 import QtWidgets
+from PySide6 import QtWidgets, QtCore
 import mysql.connector
 import AuthWindowSlots
+import InfoEnterpriseSlots
 import InfoEnterpriseSlots
 import InfoIndustrySlots
 import InfoServiceSlots
@@ -32,6 +33,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.act_AddUser.triggered.connect(self.OpenAddUser)
         self.statusBar().showMessage(f"Успешная авторизация: {self.DBOBJ.user}",3000)
 
+
+    
     def ChangeUser(self):
         self.DBOBJ.close()
         self.close()
