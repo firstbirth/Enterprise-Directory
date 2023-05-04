@@ -12,7 +12,7 @@ import InfoChiefSlots
 import CreateUserSlots
 import SQLEditorSlots
 import CreateBackupSlots
-
+import DeleteUsersSlots
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, DBINSTANCE):
@@ -36,6 +36,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.act_AddUser.triggered.connect(self.OpenAddUser)
         self.act_CreateSQL.triggered.connect(self.OpenSQLEditor)
         self.act_Backup.triggered.connect(self.OpenBackup)
+        self.act_DeleteUser.triggered.connect(self.OpenDelUser)
         self.statusBar().showMessage(f"Успешная авторизация: {self.DBOBJ.user}",3000)
 
 
@@ -92,6 +93,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def OpenBackup(self):
         window = CreateBackupSlots.ViewBackupMenu(DBINSTANCE=self.DBOBJ)
+        window.show()
+        window.exec()
+
+    def OpenDelUser(self):
+        window = DeleteUsersSlots.DeleteUsers(DBINSTANCE=self.DBOBJ)
         window.show()
         window.exec()
     # def SendQuery(self):
