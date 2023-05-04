@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>w_SQLEditor</class>
+ <widget class="QMainWindow" name="w_SQLEditor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1020</width>
+    <height>486</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1020</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1020</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>SQL-редактор</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/newPrefix/icons/organization.png</normaloff>:/newPrefix/icons/organization.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#centralwidget{
+background-color:#0D1B2A;
+}
+
+.QLabel{
+color:#E0E1DD;
+}
+.QRadioButton{
+color:#E0E1DD;
+}
+.QPushButton{
+	background-color:#293241;
+	color:#E0E1DD;
+}
+#statusbar{
+background-color:#293241;
+}
+
+#menubar{
+color:black;
+font-weight:bold;
+}
+
+.QGroupBox{
+	color:#E0E1DD
+}
+
+.QPushButton:hover{
+	background-color:#1b263b;
+}
+
+#statusbar{
+	color:#E0E1DD;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Редактор SQL-команд</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="gbx_ChooseOption">
+         <property name="title">
+          <string>Выбор действия</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QRadioButton" name="rbtn_Insert">
+            <property name="text">
+             <string>Добавить</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QRadioButton" name="rbtn_Delete">
+            <property name="text">
+             <string>Удалить</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QComboBox" name="cm_DB">
+         <item>
+          <property name="text">
+           <string>city</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>contacts</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>enterprises</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>industry</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>managers</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>services</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="lt_Actions">
+      <item>
+       <widget class="QLabel" name="lb_ID">
+        <property name="text">
+         <string>Выберите ID для удаления</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cm_Rows"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="lb_CityName">
+        <property name="text">
+         <string>Название города</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="le_CityName"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="lt_Btns">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_AddData">
+        <property name="text">
+         <string>Добавить</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_DeleteData">
+        <property name="text">
+         <string>Удалить</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1020</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="../../../AppData/Desktop/qt/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -10,6 +10,7 @@ import InfoCitySlots
 import InfoContactSlots
 import InfoChiefSlots
 import CreateUserSlots
+import SQLEditorSlots
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, DBINSTANCE):
@@ -31,6 +32,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.act_InfoContact.triggered.connect(self.OpenContacts)
         self.act_InfoChief.triggered.connect(self.OpenChieves)
         self.act_AddUser.triggered.connect(self.OpenAddUser)
+        self.act_CreateSQL.triggered.connect(self.OpenSQLEditor)
         self.statusBar().showMessage(f"Успешная авторизация: {self.DBOBJ.user}",3000)
 
 
@@ -77,6 +79,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def OpenAddUser(self):
         window = CreateUserSlots.CreateUser(DBINSTANCE=self.DBOBJ)
+        window.show()
+        window.exec()
+
+    def OpenSQLEditor(self):
+        window = SQLEditorSlots.SqlEditor(DBINSTANCE=self.DBOBJ)
         window.show()
         window.exec()
     # def SendQuery(self):
